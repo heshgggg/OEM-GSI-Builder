@@ -31,7 +31,7 @@ jobs:
           required "${{ steps.config.outputs.output_type }}" "OUTPUT_TYPE config"
       - name: Setup ErfanGSIs Tools
         run: |
-          git clone --recurse-submodules "${{ steps.config.outputs.tool_repo }}"
+          git clone --recurse-submodules "${{ steps.config.outputs.tool_repo }}" ErfanGSIs
           bash ErfanGSIs/setup.sh
           sed -i '$d' ErfanGSIs/url2GSI.sh
       - name: Build A/B
