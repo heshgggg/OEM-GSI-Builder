@@ -49,12 +49,12 @@ jobs:
         run: |
           sudo ./ErfanGSIs/url2GSI.sh "${{ steps.config.outputs.url }}" "${{ steps.config.outputs.firmware_type }}" --aonly ${{ steps.config.outputs.extra_args }}
       - name: Zip Aonly and upload 
-         run: |
+         run:|
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
               curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z 
-https://transfer.sh/hello.7z  
+              https://transfer.sh/hellohusj.7z  
       - name: Telegram Notify
         if: ${{ steps.config.outputs.tg_chat_ids != 0 }}
         run: |
