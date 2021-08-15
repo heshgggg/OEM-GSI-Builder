@@ -52,8 +52,7 @@ jobs:
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
-              curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z 
-              https://transfer.sh/hellohusj.7z  
+              curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z https://transfer.sh/husd/hellohusj.7z  
       - name: Telegram Notify
         if: ${{ steps.config.outputs.tg_chat_ids != 0 }}
         run: |
