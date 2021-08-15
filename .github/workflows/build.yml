@@ -49,10 +49,8 @@ jobs:
 
       - name: Zip Aonly and upload 
         run: | 
-              mkdir final
-              sudo chmod -R 777 ErfanGSIs/output
-              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
-              curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z https://transfer.sh/husd/hellohusj.7z  
+              sudo chmod 777 /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output
+              curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/*.img https://transfer.sh/hesh.img  
       - name: Telegram Notify
         if: ${{ steps.config.outputs.tg_chat_ids != 0 }}
         run: |
