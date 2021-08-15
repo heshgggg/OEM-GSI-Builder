@@ -6,9 +6,7 @@ on:
 defaults:
   run:
     shell: bash
-env:    
-    MIR: 
-
+    
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -48,8 +46,9 @@ jobs:
         if: ${{ steps.config.outputs.output_type == 'a' }}
         run: |
           sudo ./ErfanGSIs/url2GSI.sh "${{ steps.config.outputs.url }}" "${{ steps.config.outputs.firmware_type }}" --aonly ${{ steps.config.outputs.extra_args }}
+
       - name: Zip Aonly and upload 
-         run: |
+        run: | 
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
