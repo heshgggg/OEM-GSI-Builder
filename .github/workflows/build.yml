@@ -50,7 +50,7 @@ jobs:
       - name: Zip Aonly and upload 
         run: | 
               sudo chmod 777 /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output
-              curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/*.img https://transfer.sh/funtouchosvivou10ab.img  
+              curl --upload-file  /home/runner/work/OEM-GSI-Builder/OEM-GSI-Builder/ErfanGSIs/output/*.img https://transfer.sh/funtouchosvivoY11a.img  
       - name: Telegram Notify
         if: ${{ steps.config.outputs.tg_chat_ids != 0 }}
         run: |
