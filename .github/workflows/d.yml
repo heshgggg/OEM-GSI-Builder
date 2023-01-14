@@ -31,7 +31,7 @@ jobs:
      #     required "${{ steps.config.outputs.output_type }}" "OUTPUT_TYPE config"
       - name: uname
         run: |
-          cat /proc/cpuinfo|grep processor|wc -l
+          sudo cat /proc/cpuinfo|grep processor|wc -l
       - name: Build A/B
         if: ${{ steps.config.outputs.output_type == 'all' }}
         run: |
